@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uml", "src\uml\Uml\Uml.csproj", "{FC69C22F-E506-4915-B457-48FE3D10823F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8805DFB9-BB7D-49A4-ACCA-077AA6E50FAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{5C40D0FB-7D6F-43BB-8F85-9A4D44D8CB8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uml.Tests", "test\Uml.Tests\Uml.Tests.csproj", "{B2D5A5D5-FDD2-4620-9DE3-4F857BFF751E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC69C22F-E506-4915-B457-48FE3D10823F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC69C22F-E506-4915-B457-48FE3D10823F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC69C22F-E506-4915-B457-48FE3D10823F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC69C22F-E506-4915-B457-48FE3D10823F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2D5A5D5-FDD2-4620-9DE3-4F857BFF751E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2D5A5D5-FDD2-4620-9DE3-4F857BFF751E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2D5A5D5-FDD2-4620-9DE3-4F857BFF751E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2D5A5D5-FDD2-4620-9DE3-4F857BFF751E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC69C22F-E506-4915-B457-48FE3D10823F} = {8805DFB9-BB7D-49A4-ACCA-077AA6E50FAD}
+		{B2D5A5D5-FDD2-4620-9DE3-4F857BFF751E} = {5C40D0FB-7D6F-43BB-8F85-9A4D44D8CB8E}
+	EndGlobalSection
+EndGlobal
