@@ -1,9 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+   
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Humanizer" Version="2.14.1" />
+      <PackageReference Include="Mono.TextTemplating" Version="2.3.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <TextTemplate Include="**/*.tt" />
+    </ItemGroup>
+
+    <Target Name="TextTemplateTransform" BeforeTargets="BeforeBuild" Inputs="@(TextTemplate)" Outputs="%(FileName).Generated.cs">
+        <Exec WorkingDirectory="$(ProjectDir)" Command="t4 -o %(RelativeDir)%(FileName).Generated.cs -c Uml.@(TextTemplate-&gt;'%(RelativeDir)'-&gt;Replace('/', '.'))%(TextTemplate.Filename) %(TextTemplate.Identity)" />
+    </Target>
+    
 </Project>

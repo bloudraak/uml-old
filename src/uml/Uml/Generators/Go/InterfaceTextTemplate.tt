@@ -1,0 +1,24 @@
+<#@ template language="C#" linePragmas="false" culture="en-US" visibility="internal" inherits="TextTemplate" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="Uml" #>
+<#@ parameter name="Item" type="IInterface"#>
+package <#= Item.Package.Name #>
+
+type <#= Item.Name #> interface {
+<#
+    foreach (var property in Item.OwnedAttributes)
+    {
+#>
+    <#= property.Name #>() <#= property.Type.Name #>
+    Set<#= property.Name #>(value <#= property.Type.Name #>)
+<#
+    }
+    foreach (var operation in Item.OwnedOperations)
+    {
+#>
+    <#= operation.Name #>()
+<#
+    }
+#>
+} 

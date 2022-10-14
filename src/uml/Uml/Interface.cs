@@ -33,4 +33,14 @@ internal class Interface : Classifier, IInterface
     {
         return new Operation(this, name);
     }
+    
+    protected override bool VisitBegin(IVisitor visitor)
+    {
+        return visitor.VisitBegin(this);
+    }
+    
+    protected override void VisitEnd(IVisitor visitor)
+    {
+        visitor.VisitEnd(this);
+    }
 }

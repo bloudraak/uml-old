@@ -111,4 +111,17 @@ public class PackageSpecTests
         Assert.That(@interface.RealizingClassifiers.ToList(), Does.Contain(@class));
     }
 
+    [Test]
+    public void ApplyProfile()
+    {
+        Assert.That(Package, Is.Not.Null);
+        var profile = Model.ProfileManager.CreateProfile("TestProfile");
+        var stereotype = profile.CreateStereotype("TestStereotype");
+        
+        var profileInstance = Package.ApplyProfile(profile);
+        Assert.That(profileInstance, Is.Not.Null);
+        Assert.That(Package.AllProfileInstances.ToList(), Does.Contain(profileInstance));
+        Assert.That(Package.ApplicableStereotypes.ToList(), Does.Not.Contain(stereotype));
+        
+    }
 }

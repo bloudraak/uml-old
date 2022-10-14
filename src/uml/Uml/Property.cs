@@ -12,4 +12,14 @@ internal class Property : NamedElement, IProperty
     public IClass? Class => base.Owner as IClass;
     
     public IInterface? Interface => base.Owner as IInterface;
+
+    protected override void VisitEnd(IVisitor visitor)
+    {
+        visitor.Visit(this);
+    }
+
+    protected override bool VisitBegin(IVisitor visitor)
+    {
+        return base.VisitBegin(visitor);
+    }
 }
